@@ -1,5 +1,5 @@
 const app = require('express')();
-const PORT = 3000;
+const PORT = 8080;
 const fcl = require('@onflow/fcl');
 const t = require('@onflow/types');
 
