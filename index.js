@@ -97,7 +97,7 @@ app.get('/',(req, res)=>{
     res.send("<h1>Hello World!</h1>")
 });
 
-app.post('/check/:id' ,async (req, res) =>{
+app.get('/check/:id' ,async (req, res) =>{
     
     const {id} = req.params
 
