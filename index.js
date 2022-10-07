@@ -93,6 +93,10 @@ app.listen(
     ()=> console.log('Running...')
 )
 
+app.get('/',()=>{
+    res.send("<h1>Hello World!</h1>")
+});
+
 app.post('/check/:id' ,async (req, res) =>{
     
     const {id} = req.params
