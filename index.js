@@ -1,5 +1,5 @@
 const app = require('express')();
-const PORT = 8080;
+const PORT = 3000;
 const fcl = require('@onflow/fcl');
 const t = require('@onflow/types');
 
@@ -93,7 +93,7 @@ app.listen(
     ()=> console.log('Running...')
 )
 
-app.get('/',()=>{
+app.get('/',(req, res)=>{
     res.send("<h1>Hello World!</h1>")
 });
 
