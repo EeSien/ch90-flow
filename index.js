@@ -60,9 +60,9 @@ let eventIds = [
     595889086
 ]
 
-let resultingArr=[];
 
 const checkOwnsFloat = async (emeraldIds) => {
+let resultingArr=[];
  await Promise.all(
   eventIds.map(async element => {
         try {
@@ -104,8 +104,8 @@ app.post('/check/:id' ,async (req, res) =>{
     if(!id){
         res.status(400).send({message: 'Please insert an id!'})
     }
-    
-    let amount = await asyncCall(id);
+    let amount = 0;
+     amount = await asyncCall(id);
     
     res.send({
         amount: amount
