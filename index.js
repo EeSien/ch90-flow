@@ -1,5 +1,6 @@
 const app = require('express')();
-const PORT = 80;
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 const fcl = require('@onflow/fcl');
 const t = require('@onflow/types');
 
@@ -88,10 +89,9 @@ async function asyncCall(emeraldIds) {
 }
 
 
-app.listen(
-    PORT,
-    ()=> console.log('Running...')
-)
+app.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
+});
 
 app.get('/',(req, res)=>{
     res.send("<h1>Hello World!</h1>")
