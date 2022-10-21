@@ -107,9 +107,17 @@ app.get('/check/:id' ,async (req, res) =>{
     if(!id){
         res.status(400).send({message: 'Please insert an id!'})
     }
+    let returnAmount = 0;
     let amount = 0;
-     amount = await asyncCall(id);
-    
+    returnAmount = await asyncCall(id);
+     if (returnAmount >=10 && returnAmount < 20){
+    amount = 10;  }
+  else if(returnAmount >=20 && returnAmount < 30)
+  {
+   amount = 20;  }else if (returnAmount >= 30){
+    amount = 30;  }else {
+    amount = 0;
+  }
     res.send({
         amount: amount
     })
