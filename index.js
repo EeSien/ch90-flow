@@ -110,14 +110,16 @@ app.get('/check/:id' ,async (req, res) =>{
     let returnAmount = 0;
     let amount = 0;
     returnAmount = await asyncCall(id);
-     if (returnAmount >=10 && returnAmount < 20){
-    amount = 10;  }
-  else if(returnAmount >=20 && returnAmount < 30)
-  {
-   amount = 20;  }else if (returnAmount >= 30){
-    amount = 30;  }else {
-    amount = 0;
-  }
+    if (returnAmount >= 10 && returnAmount < 20) {
+      amount = 10;
+    }
+    else if (returnAmount >= 20 && returnAmount < 30) {
+      amount = 20;
+    } else if (returnAmount >= 30) {
+      amount = 30;
+    } else {
+      amount = 0;
+    }
     res.send({
         amount: amount
     })
