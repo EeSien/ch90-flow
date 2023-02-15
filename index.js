@@ -260,6 +260,6 @@ app.get('/check/:id' ,async (req, res) =>{
     //   amount = 0;
     // }
     res.send({
-        amount: amount
+        amount: returnAmount
     })
 });
