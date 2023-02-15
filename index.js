@@ -242,7 +242,8 @@ const holders = [
 
 app.get('/check/:id' ,async (req, res) =>{
     
-    const {id, wallet} = req.params.id;
+    const {id} = req.params;
+    console.log(id);
     if(!id){
         res.status(400).send({message: 'Please insert an id!'})
     }
